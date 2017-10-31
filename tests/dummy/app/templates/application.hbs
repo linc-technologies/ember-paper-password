@@ -1,5 +1,10 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>ember-paper-password</h1>
 
-{{outlet}}
+{{#paper-form as |form|}}
+  <div class="layout-row">
+    {{paper-password label="Enter password" value=password onChange=(action (mut password)) required=true class="flex-80 layout-row" inputClass="flex"}}
+    <div class="flex-20">
+      {{#form.submit-button raised=true primary=true disabled=form.isInvalid}}Submit{{/form.submit-button}}
+    </div>
+  </div>
+{{/paper-form}}
