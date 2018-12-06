@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { A } from '@ember/array';
+import { assert } from '@ember/debug';
 import strength from 'password-strength';
 import layout from '../templates/components/paper-password';
 
-const { Component, computed, A, assert } = Ember;
-
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   minStrength: 3,
   strengthLabel: 'Password strength: ',
