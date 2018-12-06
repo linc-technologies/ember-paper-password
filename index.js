@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-paper-password'
+  name: require('./package').name
 };
