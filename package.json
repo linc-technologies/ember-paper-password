@@ -1,6 +1,6 @@
 {
   "name": "ember-paper-password",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Password input with strength meter / requirements for Ember Paper",
   "keywords": [
     "ember-addon"
