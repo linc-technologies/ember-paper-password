@@ -9,10 +9,10 @@ export default Component.extend({
   layout,
   minStrength: 3,
   strengthLabel: 'Password strength: ',
-  strengthLevels: ['Very Poor', 'Poor', 'Fair', 'Good', 'Excellent'],
+  strengthLevels: A(['Very Poor', 'Poor', 'Fair', 'Good', 'Excellent']),
   passwordErrorMessage: 'Please enter a stronger password.',
-  errors: [],
-  customValidations: [],
+  errors: A([]),
+  customValidations: A([]),
 
   passwordStrength: computed('value', function() {
     let password = this.value;
