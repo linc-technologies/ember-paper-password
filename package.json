@@ -16,7 +16,8 @@
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
     "start": "ember server",
-    "test": "ember try:each"
+    "test": "ember try:each",
+    "test:ember": "ember test"
   },
   "dependencies": {
     "ember-cli-babel": "^7.1.2",
