@@ -15,7 +15,7 @@ export default Component.extend({
   customValidations: [],
 
   passwordStrength: computed('value', function() {
-    let password = this.get('value');
+    let password = this.value;
     if (password) {
       return strength(password);
     } else {
@@ -23,23 +23,23 @@ export default Component.extend({
     }
   }),
   strengthValue: computed('value', function() {
-    return (this.get('passwordStrength').score / 4) * 100;
+    return (this.passwordStrength.score / 4) * 100;
   }),
   strengthLevel: computed('value', function() {
-    return this.get('strengthLevels')[this.get('passwordStrength').score];
+    return this.strengthLevels[this.passwordStrength.score];
   }),
   strengthWarning: computed('value', function() {
-    return this.get('passwordStrength').score < this.get('minStrength');
+    return this.passwordStrength.score < this.minStrength;
   }),
 
   inputErrors: computed('errors.[]', 'value', function() {
-    let myErrors = A().pushObjects(this.get('errors'));
-    let passwordStrength = this.get('passwordStrength');
-    let password = this.get('value');
+    let myErrors = A().pushObjects(this.errors);
+    let passwordStrength = this.passwordStrength;
+    let password = this.value;
 
-    if (password && passwordStrength.score < this.get('minStrength')) {
+    if (password && passwordStrength.score < this.minStrength) {
       myErrors.pushObject({
-        message: this.get('passwordErrorMessage')
+        message: this.passwordErrorMessage
       });
     }
 
@@ -48,6 +48,6 @@ export default Component.extend({
 
   didReceiveAttrs() {
     this._super(...arguments);
-    assert('{{paper-password}} requires an `onChange` action or null for no action.', this.get('onChange') !== undefined);
+    assert('{{paper-password}} requires an `onChange` action or null for no action.', this.onChange !== undefined);
   }
 });
