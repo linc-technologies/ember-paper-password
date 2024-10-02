@@ -1,6 +1,6 @@
 # ember-paper-password
 
-A password input for [Ember Paper](https://github.com/miguelcobain/ember-paper) which integrates strength checking from [ember-cli-password-strength](https://github.com/elwayman02/ember-cli-password-strength).
+A password input for [Ember Paper](https://github.com/miguelcobain/ember-paper) which integrates strength checking from [zxcvbn](https://github.com/dropbox/zxcvbn).
 
 [Demo](https://pauln.github.io/ember-paper-password/)
 
@@ -26,7 +26,12 @@ In addition to `paper-input` parameters, `paper-password` supports the following
 * `inputClass`: String, defaults to `null`.  Additional CSS class(es) to be added to the underlying `paper-input`.
 
 ```hbs
-{{paper-password label="Password" type="password" value=password onChange=(action (mut password))}}
+<PaperPassword
+  @label="Password"
+  @type="password"
+  @value={{this.password}}
+  @onChange=(fn (mut password))
+/>
 ````
 
 ## TODO
@@ -53,7 +58,6 @@ Potential improvements include:
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
