@@ -8,6 +8,12 @@ A password input for [Ember Paper](https://github.com/miguelcobain/ember-paper) 
 
 * `ember install ember-paper-password`
 
+## Compatibility
+
+* Ember.js v3.12 or above
+* Ember CLI v2.13 or above
+* Node.js v10 or above
+
 ## Usage
 
 `paper-password` passes most parameters through to the underlying `paper-input`.  See the [paper-input documentation](http://miguelcobain.github.io/ember-paper/#/components/input) for more information on which parameters are supported.
