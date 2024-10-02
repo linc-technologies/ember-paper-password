@@ -4,8 +4,8 @@
   <div class="layout-row">
     <PaperPassword
       @label="Enter password"
-      @value={{password}}
-      @onChange={{action (mut password)}}
+      @value={{this.password}}
+      @onChange={{fn (mut this.password)}}
       @required={{true}}
       @class="flex-80 layout-row"
       @inputClass="flex"
