@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { A } from '@ember/array';
 import { assert } from '@ember/debug';
-import strength from 'password-strength';
+import zxcvbn from 'zxcvbn';
 import layout from '../templates/components/paper-password';
 
 export default Component.extend({
@@ -17,7 +17,7 @@ export default Component.extend({
   passwordStrength: computed('value', function() {
     let password = this.value;
     if (password) {
-      return strength(password);
+      return zxcvbn(password);
     } else {
       return {score: 0};
     }
