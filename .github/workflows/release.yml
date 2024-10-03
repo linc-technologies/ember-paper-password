@@ -18,12 +18,10 @@ jobs:
     outputs:
       releases_created: ${{steps.release-please.outputs.releases_created}}
     steps:
-      - uses: google-github-actions/release-please-action@v3
+      - uses: googleapis/release-please-action@v4
         id: release-please
         with:
-          package-name: "@linc-technologies/ember-paper-password"
-          release-type: "node"
-          bootstrap-sha: "80dd68e536489b80855b0b638d675874f0f0b009"
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   publish:
     name: "Publish"

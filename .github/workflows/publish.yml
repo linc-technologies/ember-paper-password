@@ -46,11 +46,11 @@ jobs:
       NODE_AUTH_TOKEN: ${{github.token}}
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: "Setup Node ${{ env.node_version }}"
         id: setup_node_yarn
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node_version }}
           cache: 'yarn'
@@ -63,7 +63,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ github.token }}
         run: yarn run ci
 
-      - name: "configure npm access"
+      - name: "Configure npm access"
         id: configure_npm_access
         env:
           NPM_REGISTRY_TOKEN: ${{ secrets.NPM_TOKEN }}
