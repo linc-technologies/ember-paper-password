@@ -1,0 +1,99 @@
+name: "Package"
+
+on:
+  workflow_dispatch:
+    inputs:
+      prerelease:
+        type: boolean
+        default: false
+        required: false
+        description: |
+          Whether this release is a prerelease. If true, then the npm publish command will have the prerelease tag
+          passed in in order to override it being tagged as `latest`."
+      backport:
+        type: boolean
+        default: false
+        required: false
+        description: Whether this release is a backport.
+  workflow_call:
+    inputs:
+      prerelease:
+        type: boolean
+        default: false
+        required: false
+        description: |
+          Whether this release is a prerelease. If true, then the npm publish command will have the prerelease tag
+          passed in in order to override it being tagged as `latest`."
+          https://gist.github.com/tfennelly/f1d573d935f4e9e9b4d1ee1b0ab6c04c
+      backport:
+        type: boolean
+        default: false
+        required: false
+        description: Whether this release is a backport.
+  release:
+    types: [created]
+
+env:
+  node_version: '14.21'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      NODE_AUTH_TOKEN: ${{github.token}}
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      - name: "Setup Node ${{ env.node_version }}"
+        id: setup_node_yarn
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
+          registry-url: "https://npm.pkg.github.com"
+
+      - name: "Install Dependencies"
+        id: install_dependencies_yarn
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+        run: yarn run ci
+
+      - name: "configure npm access"
+        id: configure_npm_access
+        env:
+          NPM_REGISTRY_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm set //registry.npmjs.org/:_authToken=${NPM_REGISTRY_TOKEN}
+
+      - name: "Publish Pre-release"
+        id: publish_prerelease_yarn
+        if: ${{ inputs.prerelease }}
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=$(cat package.json | jq '.version' | sed -e 's/".*-\(.*\)"/\1/g')
+          yarn publish --tag=$TAG
+          npm publish --tag=$TAG --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
+
+      - name: "Publish Backport"
+        id: publish_backport_yarn
+        if: ${{ inputs.backport }}
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=$(cat package.json| jq -r .version)
+          yarn publish --new-version=$TAG
+          npm publish --new-version=$TAG --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
+
+      - name: "Publish"
+        id: publish_yarn
+        if: ${{ steps.publish_prerelease_yarn.outcome == 'skipped' && steps.publish_backport_yarn.outcome == 'skipped' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+        run: |
+          yarn publish
+          npm publish --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
