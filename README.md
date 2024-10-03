@@ -2,7 +2,7 @@
 
 A password input for [Ember Paper](https://github.com/miguelcobain/ember-paper) which integrates strength checking from [zxcvbn](https://github.com/dropbox/zxcvbn).
 
-[Demo](https://pauln.github.io/ember-paper-password/)
+[Demo](https://developers.linc-ed.com/ember-paper-password/)
 
 ## Installation
 
