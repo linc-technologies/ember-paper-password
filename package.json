@@ -1,17 +1,17 @@
 {
-  "name": "ember-paper-password",
+  "name": "@linc-technologies/ember-paper-password",
   "version": "0.2.0",
   "description": "Password input with strength meter / requirements for Ember Paper",
   "keywords": [
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Paul Nicholls <pauln@linc-ed.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/pauln/ember-paper-password",
+  "repository": "https://github.com/linc-technologies/ember-paper-password",
   "scripts": {
     "build": "ember build --environment=production",
     "lint:js": "eslint .",
