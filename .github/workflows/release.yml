@@ -1,0 +1,33 @@
+name: "Release"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  checks: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    name: "Release"
+    runs-on: ubuntu-latest
+    outputs:
+      releases_created: ${{steps.release-please.outputs.releases_created}}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release-please
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  publish:
+    name: "Publish"
+    needs: [release]
+    if: ${{needs.release.outputs.releases_created}}
+    permissions:
+      contents: read
+      packages: write
+    uses: ./.github/workflows/publish.yml
