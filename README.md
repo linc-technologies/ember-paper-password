@@ -6,7 +6,7 @@ A password input for [Ember Paper](https://github.com/miguelcobain/ember-paper) 
 
 ## Installation
 
-* `ember install ember-paper-password`
+* `ember install @linc-technologies/ember-paper-password`
 
 ## Compatibility
 
