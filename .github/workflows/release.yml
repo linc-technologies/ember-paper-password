@@ -30,5 +30,6 @@ jobs:
     if: ${{needs.release.outputs.releases_created}}
     permissions:
       contents: read
+      id-token: write
       packages: write
     uses: ./.github/workflows/publish.yml
