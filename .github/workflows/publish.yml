@@ -77,7 +77,7 @@ jobs:
         run: |
           TAG=$(cat package.json | jq '.version' | sed -e 's/".*-\(.*\)"/\1/g')
           yarn publish --tag=$TAG
-          npm publish --tag=$TAG --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
+          npm publish --tag=$TAG --provenance --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
 
       - name: "Publish Backport"
         id: publish_backport_yarn
@@ -87,7 +87,7 @@ jobs:
         run: |
           TAG=$(cat package.json| jq -r .version)
           yarn publish --new-version=$TAG
-          npm publish --new-version=$TAG --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
+          npm publish --new-version=$TAG --provenance --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
 
       - name: "Publish"
         id: publish_yarn
@@ -96,4 +96,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ github.token }}
         run: |
           yarn publish
-          npm publish --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
+          npm publish --provenance --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
