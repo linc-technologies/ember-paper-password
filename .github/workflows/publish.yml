@@ -94,6 +94,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ github.token }}
           NPM_REGISTRY_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          #yarn publish
+          yarn publish
           npm set "//registry.npmjs.org/:_authToken=${NPM_REGISTRY_TOKEN}"
           npm publish --provenance --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
