@@ -95,5 +95,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
         run: |
-          yarn publish
+          #yarn publish
           npm publish --provenance --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
