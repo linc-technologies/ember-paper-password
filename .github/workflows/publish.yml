@@ -63,20 +63,16 @@ jobs:
           NODE_AUTH_TOKEN: ${{ github.token }}
         run: yarn run ci
 
-      - name: "Configure npm access"
-        id: configure_npm_access
-        env:
-          NPM_REGISTRY_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm set //registry.npmjs.org/:_authToken=${NPM_REGISTRY_TOKEN}
-
       - name: "Publish Pre-release"
         id: publish_prerelease_yarn
         if: ${{ inputs.prerelease }}
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
+          NPM_REGISTRY_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           TAG=$(cat package.json | jq '.version' | sed -e 's/".*-\(.*\)"/\1/g')
           yarn publish --tag=$TAG
+          npm set "//registry.npmjs.org/:_authToken=${NPM_REGISTRY_TOKEN}"
           npm publish --tag=$TAG --provenance --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
 
       - name: "Publish Backport"
@@ -84,9 +80,11 @@ jobs:
         if: ${{ inputs.backport }}
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
+          NPM_REGISTRY_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           TAG=$(cat package.json| jq -r .version)
           yarn publish --new-version=$TAG
+          npm set "//registry.npmjs.org/:_authToken=${NPM_REGISTRY_TOKEN}"
           npm publish --new-version=$TAG --provenance --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
 
       - name: "Publish"
@@ -94,6 +92,8 @@ jobs:
         if: ${{ steps.publish_prerelease_yarn.outcome == 'skipped' && steps.publish_backport_yarn.outcome == 'skipped' }}
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
+          NPM_REGISTRY_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           #yarn publish
+          npm set "//registry.npmjs.org/:_authToken=${NPM_REGISTRY_TOKEN}"
           npm publish --provenance --access public --ignore-scripts --@linc-technologies:registry='https://registry.npmjs.org'
