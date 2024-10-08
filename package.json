@@ -18,7 +18,8 @@
     "lint:hbs": "ember-template-lint .",
     "start": "ember server",
     "test": "ember try:each",
-    "test:ember": "ember test"
+    "test:ember": "ember test",
+    "ci": "yarn install --ignore-engines --frozen-lockfile"
   },
   "dependencies": {
     "ember-auto-import": "^1.5.3",
