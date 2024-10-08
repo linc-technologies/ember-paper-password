@@ -11,7 +11,10 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/linc-technologies/ember-paper-password",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linc-technologies/ember-paper-password.git"
+  },
   "scripts": {
     "build": "ember build --environment=production",
     "lint:js": "eslint .",
@@ -65,5 +68,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "homepage": "https://github.com/linc-technologies/ember-paper-password#readme"
 }
