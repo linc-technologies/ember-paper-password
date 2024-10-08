@@ -1,1 +1,1 @@
-export { default } from 'ember-paper-password/components/paper-password';
+export { default } from '@linc-technologies/ember-paper-password/components/paper-password';
