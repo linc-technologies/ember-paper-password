@@ -17,12 +17,12 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
-    "lint:js": "eslint .",
+    "ci": "yarn install --ignore-engines --frozen-lockfile",
     "lint:hbs": "ember-template-lint .",
+    "lint:js": "eslint .",
     "start": "ember server",
     "test": "ember try:each",
-    "test:ember": "ember test",
-    "ci": "yarn install --ignore-engines --frozen-lockfile"
+    "test:ember": "ember test"
   },
   "dependencies": {
     "ember-auto-import": "^1.5.3",
@@ -53,6 +53,7 @@
     "ember-qunit": "^4.6.0",
     "ember-resolver": "^7.0.0",
     "ember-source": "~3.16.0",
+    "ember-source-channel-url": "^3.0.0",
     "eslint-plugin-ember": "^7.7.2",
     "eslint-plugin-node": "^11.0.0",
     "loader.js": "^4.7.0"
