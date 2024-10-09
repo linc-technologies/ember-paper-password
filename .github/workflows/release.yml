@@ -11,7 +11,7 @@ jobs:
     name: "Release"
     runs-on: ubuntu-latest
     outputs:
-      releases_created: ${{steps.release-please.outputs.releases_created}}
+      releases_created: ${{ steps.release-please.outputs.releases_created }}
     permissions:
       checks: write
       contents: write
@@ -25,7 +25,7 @@ jobs:
   publish:
     name: "Publish"
     needs: [release]
-    if: ${{needs.release.outputs.releases_created == 'true'}}
+    if: ${{ needs.release.outputs.releases_created == 'true' }}
     uses: linc-technologies/.github/.github/workflows/ember_publish.yml@main
     secrets:
       npm_token: ${{ secrets.NPM_TOKEN }}
