@@ -7,7 +7,7 @@ on:
 
 jobs:
   lint:
-    uses: linc-technologies/github/.github/workflows/ember_lint.yml@main
+    uses: linc-technologies/.github/.github/workflows/ember_lint.yml@main
     secrets: inherit
     with:
       node_version: '14.21'
