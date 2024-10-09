@@ -28,9 +28,12 @@ jobs:
     name: "Publish"
     needs: [release]
     if: ${{needs.release.outputs.releases_created}}
+    uses: linc-technologies/github/.github/workflows/ember_publish.yml@main
     permissions:
       contents: read
       id-token: write
       packages: write
-    uses: ./.github/workflows/publish.yml
-    secrets: inherit
+    secrets:
+      npm_token: ${{ secrets.NPM_TOKEN }}
+    with:
+      public: true
