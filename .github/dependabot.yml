@@ -15,5 +15,9 @@ updates:
       - dependency-type: direct
     groups:
       default:
+        exclude-patterns:
+          - "@ember*"
+          - "ember*"
+          - "eslint*"
         patterns:
           - "*"
