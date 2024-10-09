@@ -22,22 +22,22 @@ export default Component.extend({
       return {score: 0};
     }
   }),
-  strengthValue: computed('value', function() {
+  strengthValue: computed('passwordStrength.score', function() {
     return (this.passwordStrength.score / 4) * 100;
   }),
-  strengthLevel: computed('value', function() {
+  strengthLevel: computed('passwordStrength.score', 'strengthLevels', function() {
     return this.strengthLevels[this.passwordStrength.score];
   }),
-  strengthWarning: computed('value', function() {
+  strengthWarning: computed('minStrength', 'passwordStrength.score', function() {
     return this.passwordStrength.score < this.minStrength;
   }),
 
-  inputErrors: computed('errors.[]', 'value', function() {
+  inputErrors: computed('errors.[]', 'minStrength', 'passwordErrorMessage', 'passwordStrength.score', 'value', function() {
     let myErrors = A().pushObjects(this.errors);
-    let passwordStrength = this.passwordStrength;
+    let passwordStrength = this.passwordStrength.score;
     let password = this.value;
 
-    if (password && passwordStrength.score < this.minStrength) {
+    if (password && (passwordStrength < this.minStrength)) {
       myErrors.pushObject({
         message: this.passwordErrorMessage
       });
