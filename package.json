@@ -49,7 +49,7 @@
     "ember-disable-prototype-extensions": "^1.1.3",
     "ember-export-application-global": "^2.0.1",
     "ember-load-initializers": "^2.1.1",
-    "ember-paper": "1.0.0-beta.20",
+    "ember-paper": ">=1.0.0-beta.20 <=1.0.0-beta.35",
     "ember-qunit": "^4.6.0",
     "ember-resolver": "^7.0.0",
     "ember-source": "~3.16.0",
