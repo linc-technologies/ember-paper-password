@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/linc-technologies/ember-paper-password/compare/ember-paper-password-v0.3.0...ember-paper-password-v0.4.0) (2024-10-09)
+
+
+### Features
+
+* **deps:** upgrades to `ember@3.20`. ([#36](https://github.com/linc-technologies/ember-paper-password/issues/36)) ([838ed19](https://github.com/linc-technologies/ember-paper-password/commit/838ed1942b62fed975609a4c53043c95c17991ba))
+* upgrades to `ember@3.20`. ([38b51d4](https://github.com/linc-technologies/ember-paper-password/commit/38b51d459393b63cb4e00bd43cc23bfacc3127b3))
+
+
+### Bug Fixes
+
+* **addon/components/paper-password:** fixes use of undeclared dependencies in computed properties. ([41d25fa](https://github.com/linc-technologies/ember-paper-password/commit/41d25fa88248646db986fd2547e4254e09bbc907))
+
 ## [0.3.0](https://github.com/linc-technologies/ember-paper-password/compare/ember-paper-password-v0.2.0...ember-paper-password-v0.3.0) (2024-10-09)
 
 
