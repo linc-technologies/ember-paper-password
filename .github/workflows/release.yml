@@ -25,7 +25,7 @@ jobs:
   publish:
     name: "Publish"
     needs: [release]
-    if: ${{needs.release.outputs.releases_created}}
+    if: ${{needs.release.outputs.releases_created == 'true'}}
     uses: linc-technologies/.github/.github/workflows/ember_publish.yml@main
     secrets:
       npm_token: ${{ secrets.NPM_TOKEN }}
