@@ -1,4 +1,4 @@
-# ember-paper-password
+# @linc-technologies/ember-paper-password
 
 A password input for [Ember Paper](https://github.com/miguelcobain/ember-paper) which integrates strength checking from [zxcvbn](https://github.com/dropbox/zxcvbn).
 
