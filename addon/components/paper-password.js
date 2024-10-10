@@ -14,40 +14,58 @@ export default Component.extend({
   errors: A([]),
   customValidations: A([]),
 
-  passwordStrength: computed('value', function() {
+  passwordStrength: computed('value', function () {
     let password = this.value;
     if (password) {
       return zxcvbn(password);
     } else {
-      return {score: 0};
+      return { score: 0 };
     }
   }),
-  strengthValue: computed('passwordStrength.score', function() {
+  strengthValue: computed('passwordStrength.score', function () {
     return (this.passwordStrength.score / 4) * 100;
   }),
-  strengthLevel: computed('passwordStrength.score', 'strengthLevels', function() {
-    return this.strengthLevels[this.passwordStrength.score];
-  }),
-  strengthWarning: computed('minStrength', 'passwordStrength.score', function() {
-    return this.passwordStrength.score < this.minStrength;
-  }),
-
-  inputErrors: computed('errors.[]', 'minStrength', 'passwordErrorMessage', 'passwordStrength.score', 'value', function() {
-    let myErrors = A().pushObjects(this.errors);
-    let passwordStrength = this.passwordStrength.score;
-    let password = this.value;
-
-    if (password && (passwordStrength < this.minStrength)) {
-      myErrors.pushObject({
-        message: this.passwordErrorMessage
-      });
+  strengthLevel: computed(
+    'passwordStrength.score',
+    'strengthLevels',
+    function () {
+      return this.strengthLevels[this.passwordStrength.score];
     }
+  ),
+  strengthWarning: computed(
+    'minStrength',
+    'passwordStrength.score',
+    function () {
+      return this.passwordStrength.score < this.minStrength;
+    }
+  ),
 
-    return myErrors;
-  }),
+  inputErrors: computed(
+    'errors.[]',
+    'minStrength',
+    'passwordErrorMessage',
+    'passwordStrength.score',
+    'value',
+    function () {
+      let myErrors = A().pushObjects(this.errors);
+      let passwordStrength = this.passwordStrength.score;
+      let password = this.value;
+
+      if (password && passwordStrength < this.minStrength) {
+        myErrors.pushObject({
+          message: this.passwordErrorMessage,
+        });
+      }
+
+      return myErrors;
+    }
+  ),
 
   didReceiveAttrs() {
     this._super(...arguments);
-    assert('{{paper-password}} requires an `onChange` action or null for no action.', this.onChange !== undefined);
-  }
+    assert(
+      '{{paper-password}} requires an `onChange` action or null for no action.',
+      this.onChange !== undefined
+    );
+  },
 });
