@@ -1,16 +1,18 @@
+{{page-title '@linc-technologies/ember-paper-password'}}
+
 <h1>ember-paper-password</h1>
 
 <PaperForm as |form|>
-  <div class="layout-row">
+  <div class='layout-row'>
     <PaperPassword
-      @label="Enter password"
+      @label='Enter password'
       @value={{this.password}}
       @onChange={{fn (mut this.password)}}
       @required={{true}}
-      @class="flex-80 layout-row"
-      @inputClass="flex"
+      @class='flex-80 layout-row'
+      @inputClass='flex'
     />
-    <div class="flex-20">
+    <div class='flex-20'>
       <form.submit-button
         @raised={{true}}
         @primary={{true}}
@@ -21,3 +23,5 @@
     </div>
   </div>
 </PaperForm>
+
+{{outlet}}

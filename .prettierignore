@@ -17,6 +17,5 @@
 
 # ember-try
 /.node_modules.ember-try/
-
-# public assets
-/public
+/bower.json.ember-try
+/package.json.ember-try
