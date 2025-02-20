@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/linc-technologies/ember-paper-password/compare/ember-paper-password-v0.4.0...ember-paper-password-v0.4.1) (2025-02-20)
+
+
+### Bug Fixes
+
+* **deps:** mitigates against CVE-2023-45133 and GHSA-vjh7-7g9h-fjfh. ([#67](https://github.com/linc-technologies/ember-paper-password/issues/67)) ([0c2111f](https://github.com/linc-technologies/ember-paper-password/commit/0c2111f37da13cd00ba3548cf4dd685e46068d2f))
+
 ## [0.4.0](https://github.com/linc-technologies/ember-paper-password/compare/ember-paper-password-v0.3.0...ember-paper-password-v0.4.0) (2024-10-09)
 
 
