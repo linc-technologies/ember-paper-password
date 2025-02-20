@@ -73,7 +73,9 @@
     "babel-plugin-polyfill-es-shims": "^0.10.0",
     "babel-plugin-polyfill-regenerator": "^0.5.3",
     "**/fsevents": "npm:empty-npm-package@1.0.0",
-    "cross-spawn": "7.0.5"
+    "cross-spawn": "7.0.5",
+    "path-to-regexp": "0.1.12",
+    "ansi-html": "0.0.8"
   },
   "engines": {
     "node": "10.* || >= 12"
