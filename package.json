@@ -77,7 +77,8 @@
     "path-to-regexp": "0.1.12",
     "ansi-html": "0.0.8",
     "braces": "3.0.3",
-    "json5": "1.0.2"
+    "json5": "1.0.2",
+    "rollup": "3.29.5"
   },
   "engines": {
     "node": "10.* || >= 12"
