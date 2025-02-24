@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.4.2](https://github.com/linc-technologies/ember-paper-password/compare/ember-paper-password-v0.4.1...ember-paper-password-v0.4.2) (2025-02-24)
+
+
+### Bug Fixes
+
+* **deps:** cves everywhere all at once pt 4 ([#73](https://github.com/linc-technologies/ember-paper-password/issues/73)) HERO-10791 ([01f0a53](https://github.com/linc-technologies/ember-paper-password/commit/01f0a530ab62f09c08357e757447d8d97adf9070))
+* **deps:** resolves on `tar@^6.2.0` to mitigate CVE-2021-37701, CVE-2021-37712, CVE-2021-37713, CVE-2021-32803, CVE-2021-32804, CVE-2024-28863. ([#71](https://github.com/linc-technologies/ember-paper-password/issues/71)) ([1b37d31](https://github.com/linc-technologies/ember-paper-password/commit/1b37d311b45dfdd1a759aeb61aae75190db94d58))
+* **deps:** resolves on `tar@6.2.0` to mitigate CVE-2021-37701, CVE-2021-37712, CVE-2021-37713, CVE-2021-32803, CVE-2021-32804, CVE-2024-28863. ([1ccb1bb](https://github.com/linc-technologies/ember-paper-password/commit/1ccb1bb15a71ab0f8156a41bcabe69d31a8ec152))
+* upgrade semver to ^5.7.2 to fix CVE. ([fdd8e13](https://github.com/linc-technologies/ember-paper-password/commit/fdd8e13e2c90d32dd52d95ab9ba9f399ce094ee1))
+* upgrade trim-newlines to 3.0.1 to fix CVE. ([1b9b8dc](https://github.com/linc-technologies/ember-paper-password/commit/1b9b8dceca35a6f66ec17a30404e6b1d1ce8ad1e))
+
 ## [0.4.1](https://github.com/linc-technologies/ember-paper-password/compare/ember-paper-password-v0.4.0...ember-paper-password-v0.4.1) (2025-02-20)
 
 
