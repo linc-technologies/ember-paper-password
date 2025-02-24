@@ -80,6 +80,7 @@
     "json5": "1.0.2",
     "path-to-regexp": "0.1.12",
     "scss-tokenizer": "0.4.3",
+    "semver": "^5.7.2",
     "tar": "^6.2.0",
     "trim-newlines": "^3.0.1"
   },
