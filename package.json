@@ -86,7 +86,8 @@
     "markdown-it": "12.3.2",
     "micromatch": "4.0.8",
     "request":"npm:@cypress/request@3.0.0",
-    "tough-cookie": "4.1.3"
+    "tough-cookie": "4.1.3",
+    "got": "11.8.5"
   },
   "engines": {
     "node": "10.* || >= 12"
