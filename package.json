@@ -84,7 +84,8 @@
     "tar": "^6.2.0",
     "trim-newlines": "^3.0.1",
     "markdown-it": "12.3.2",
-    "micromatch": "4.0.8"
+    "micromatch": "4.0.8",
+    "request":"npm:@cypress/request@3.0.0"
   },
   "engines": {
     "node": "10.* || >= 12"
