@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.3](https://github.com/linc-technologies/ember-paper-password/compare/ember-paper-password-v0.4.2...ember-paper-password-v0.4.3) (2025-03-04)
+
+
+### Bug Fixes
+
+* **deps:** resolves `lodash.template` on `lodash@^4.17.21` to mitigate CVE-2021-23337. ([3831c89](https://github.com/linc-technologies/ember-paper-password/commit/3831c890470cefb3760781f386b8f890e8fa7614))
+* **deps:** resolves `lodash.template` on `lodash@^4.17.21` to mitigate CVE-2021-23337. (HERO-10831) ([#76](https://github.com/linc-technologies/ember-paper-password/issues/76)) ([da91a32](https://github.com/linc-technologies/ember-paper-password/commit/da91a32273036661128cb63108cb6b3c0bb3fff3))
+* upgrade node-sass to ^7.0.0 to mitigate CVE ([15f9380](https://github.com/linc-technologies/ember-paper-password/commit/15f93800e649cc47975d73eb8a84a0fcaeb46d06))
+
 ## [0.4.2](https://github.com/linc-technologies/ember-paper-password/compare/ember-paper-password-v0.4.1...ember-paper-password-v0.4.2) (2025-02-24)
 
 

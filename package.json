@@ -1,6 +1,6 @@
 {
   "name": "@linc-technologies/ember-paper-password",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Password input with strength meter / requirements for Ember Paper",
   "keywords": [
     "ember-addon"
@@ -85,7 +85,7 @@
     "micromatch": "4.0.8",
     "node-sass": "^7.0.0",
     "path-to-regexp": "0.1.12",
-    "request":"npm:@cypress/request@3.0.0",
+    "request": "npm:@cypress/request@3.0.0",
     "rollup": "2.79.2",
     "scss-tokenizer": "0.4.3",
     "semver": "^5.7.2",
