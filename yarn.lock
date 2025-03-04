@@ -3192,7 +3192,7 @@ broccoli-funnel-reducer@^1.0.0:
   resolved "https://registry.yarnpkg.com/broccoli-funnel-reducer/-/broccoli-funnel-reducer-1.0.0.tgz#11365b2a785aec9b17972a36df87eef24c5cc0ea"
   integrity sha512-SaOCEdh+wnt2jFUV2Qb32m7LXyElvFwW3NKNaEJyi5PGQNwxfqpkc0KI6AbQANKgdj/40U2UC0WuGThFwuEUaA==
 
-broccoli-funnel@^1.0.0, broccoli-funnel@^1.0.1:
+broccoli-funnel@^1.0.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/broccoli-funnel/-/broccoli-funnel-1.2.0.tgz#cddc3afc5ff1685a8023488fff74ce6fb5a51296"
   integrity sha512-0pbFNUA5Ml+gPPd58Rj/M26OS21+bMiV0F+m6+9OVzAhAdppVLxylSsXfWAt2WOD3kS+D8UsDv6GSmnZhbw/dw==
@@ -3260,7 +3260,7 @@ broccoli-kitchen-sink-helpers@^0.3.1:
     glob "^5.0.10"
     mkdirp "^0.5.1"
 
-broccoli-merge-trees@^1.0.0, broccoli-merge-trees@^1.1.0:
+broccoli-merge-trees@^1.0.0:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/broccoli-merge-trees/-/broccoli-merge-trees-1.2.4.tgz#a001519bb5067f06589d91afa2942445a2d0fdb5"
   integrity sha512-RXJAleytlED0dxXGEo2EXwrg5cCesY8LQzzGRogwGQmluoz+ijzxajpyWAW6wu/AyuQZj1vgnIqnld8jvuuXtQ==
@@ -3465,18 +3465,6 @@ broccoli-rollup@5.0.0, broccoli-rollup@^4.1.1:
     rollup-pluginutils "^2.8.1"
     symlink-or-copy "^1.2.0"
     walk-sync "^2.2.0"
-
-broccoli-sass-source-maps@^2.1.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/broccoli-sass-source-maps/-/broccoli-sass-source-maps-2.2.0.tgz#1f1a0794136152b096188638b59b42b17a4bdc68"
-  integrity sha512-X1yTOGQcjQxYebP+hjeAI286x63VZ0WfgFxqHsr4eimgNNL2TPxkJKKgOaDKJ3nE8pszbJWgHrWpEVXuwgsUzw==
-  dependencies:
-    broccoli-caching-writer "^3.0.3"
-    include-path-searcher "^0.1.0"
-    mkdirp "^0.3.5"
-    node-sass "^4.7.2"
-    object-assign "^2.0.0"
-    rsvp "^3.0.6"
 
 broccoli-sass-source-maps@^4.0.0:
   version "4.3.0"
@@ -5011,16 +4999,6 @@ ember-cli-sass@^10.0.1:
     broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^3.0.1"
     broccoli-sass-source-maps "^4.0.0"
-    ember-cli-version-checker "^2.1.0"
-
-ember-cli-sass@^7.0.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-sass/-/ember-cli-sass-7.2.0.tgz#293d1a94c43c1fdbb3835378e43d255e8ad5c961"
-  integrity sha512-X4BNBYuCyfRMGJ/Bjjk/gQw4eT6ixIXNltDQ8kapymilCqKEBZ6Rlx6noEfVzeh2nK7VP0e4rQ4DBj+TK6EDzA==
-  dependencies:
-    broccoli-funnel "^1.0.0"
-    broccoli-merge-trees "^1.1.0"
-    broccoli-sass-source-maps "^2.1.0"
     ember-cli-version-checker "^2.1.0"
 
 ember-cli-shims@^1.2.0:
@@ -8520,11 +8498,6 @@ mississippi@^3.0.0:
     stream-each "^1.1.0"
     through2 "^2.0.0"
 
-mkdirp@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.3.5.tgz#de3e5f8961c88c787ee1368df849ac4413eca8d7"
-  integrity sha512-8OCq0De/h9ZxseqzCH8Kw/Filf5pF/vMI6+BH7Lu0jXz2pqYCjTAQRolSxRIi+Ax+oCCjlxoJMP0YQ4XlrQNHg==
-
 mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@^0.5.5, mkdirp@^0.5.6:
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.6.tgz#7def03d2432dcae4ba1d611445c48396062255f6"
@@ -8717,7 +8690,7 @@ node-releases@^2.0.19:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.19.tgz#9e445a52950951ec4d177d843af370b411caf314"
   integrity sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw==
 
-node-sass@^4.7.2, node-sass@^7.0.0:
+node-sass@^7.0.0:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-7.0.3.tgz#7620bcd5559c2bf125c4fbb9087ba75cd2df2ab2"
   integrity sha512-8MIlsY/4dXUkJDYht9pIWBhMil3uHmE8b/AdJPjmFn1nBx9X9BASzfzmsCy0uCCb8eqI3SYYzVPDswWqSx7gjw==
@@ -8856,11 +8829,6 @@ object-assign@4.1.1, object-assign@^4, object-assign@^4.1.0, object-assign@^4.1.
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==
-
-object-assign@^2.0.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-2.1.1.tgz#43c36e5d569ff8e4816c4efa8be02d26967c18aa"
-  integrity sha512-CdsOUYIh5wIiozhJ3rLQgmUTgcyzFwZZrqhkKhODMoGtPKM+wt0h0CNIoauJWMsS9822EdzPsF/6mb4nLvPN5g==
 
 object-hash@^1.3.1:
   version "1.3.1"
