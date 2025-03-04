@@ -82,6 +82,7 @@
     "json5": "1.0.2",
     "markdown-it": "12.3.2",
     "micromatch": "4.0.8",
+    "node-sass": "^7.0.0",
     "path-to-regexp": "0.1.12",
     "request":"npm:@cypress/request@3.0.0",
     "rollup": "2.79.2",
