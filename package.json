@@ -1,6 +1,6 @@
 {
   "name": "@linc-technologies/ember-paper-password",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Password input with strength meter / requirements for Ember Paper",
   "keywords": [
     "ember-addon"
